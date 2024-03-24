@@ -6,16 +6,18 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.deepinthink.ginga</groupId>
-    <artifactId>ginga-parent</artifactId>
+    <artifactId>ginga-broker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-parent/pom.xml</relativePath>
+    <relativePath>../pom.xml</relativePath>
   </parent>
-  <artifactId>ginga</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-    <module>ginga-broker</module>
-    <module>ginga-build</module>
-    <module>ginga-dependencies</module>
-    <module>ginga-parent</module>
-  </modules>
+  <artifactId>ginga-broker-server</artifactId>
+  <properties>
+    <spotless-maven-plugin.skip>false</spotless-maven-plugin.skip>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+  </dependencies>
 </project>

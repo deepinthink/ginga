@@ -8,14 +8,14 @@
     <groupId>org.deepinthink.ginga</groupId>
     <artifactId>ginga-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-parent/pom.xml</relativePath>
+    <relativePath>../ginga-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga</artifactId>
+  <artifactId>ginga-broker</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>ginga-broker</module>
-    <module>ginga-build</module>
-    <module>ginga-dependencies</module>
-    <module>ginga-parent</module>
+    <module>ginga-broker-server</module>
   </modules>
 </project>
+
+
+
