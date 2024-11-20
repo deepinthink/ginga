@@ -1,0 +1,23 @@
+name: CI Maven
+
+on:
+  push:
+    branches: main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Check Google codingstyle
+        run: cd buildtools/ginga-maven && ./mvnw spotless:check
+
+      - name: Build with Maven wrapper
+        run: cd buildtools/ginga-maven && ./mvnw package -B

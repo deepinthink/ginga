@@ -1,0 +1,23 @@
+name: CI CMake
+
+on:
+  push:
+    branches: main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install build-essential cmake
+
+      - name: Build with CMake
+        run: |
+          cd buildtools/ginga-cmake
+          mkdir build && cd build && cmake ..
+          cmake --build . -j $(nproc)
