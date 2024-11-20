@@ -6,14 +6,10 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.deepinthink.ginga</groupId>
-    <artifactId>ginga-build</artifactId>
+    <artifactId>ginga-broker-dependencies</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-build/pom.xml</relativePath>
+    <relativePath>../ginga-broker-dependencies/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga</artifactId>
+  <artifactId>ginga-broker-parent</artifactId>
   <packaging>pom</packaging>
-  <modules>
-    <module>ginga-broker</module>
-    <module>ginga-build</module>
-  </modules>
 </project>
