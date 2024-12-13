@@ -8,12 +8,17 @@
     <groupId>org.deepinthink.ginga</groupId>
     <artifactId>ginga-build</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-build/pom.xml</relativePath>
+    <relativePath>../../../../buildtools/ginga-maven/ginga-build/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga</artifactId>
+  <artifactId>ginga-socket-dependencies</artifactId>
   <packaging>pom</packaging>
-  <modules>
-    <module>ginga-build</module>
-    <module>ginga-socket</module>
-  </modules>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.deepinthink.ginga</groupId>
+        <artifactId>ginga-socket-autoconfigure</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>
