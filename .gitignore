@@ -1,0 +1,15 @@
+# Mac
+.DS_Store
+
+# Apache Maven
+target/
+
+# Jetbrains IDEA
+.idea/
+*.iml
+
+# Kitware CMake
+build/
+
+# Jetbrains Clion
+cmake-build-debug
