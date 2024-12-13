@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.deepinthink.ginga</groupId>
+    <artifactId>ginga-broker-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>ginga-broker-parent/pom.xml</relativePath>
+  </parent>
+  <artifactId>ginga-broker</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>ginga-broker-autoconfigure</module>
+    <module>ginga-broker-client-core</module>
+    <module>ginga-broker-core</module>
+    <module>ginga-broker-dependencies</module>
+    <module>ginga-broker-parent</module>
+    <module>ginga-broker-server</module>
+    <module>ginga-broker-server-core</module>
+    <module>ginga-broker-starter-client</module>
+    <module>ginga-broker-starter-server</module>
+  </modules>
+</project>
