@@ -16,7 +16,22 @@
     <dependencies>
       <dependency>
         <groupId>org.deepinthink.ginga</groupId>
+        <artifactId>ginga-socket-autoconfigure</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.ginga</groupId>
         <artifactId>ginga-socket-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.ginga</groupId>
+        <artifactId>ginga-socket-messaging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.deepinthink.ginga</groupId>
+        <artifactId>ginga-socket-starter</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>

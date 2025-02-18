@@ -8,16 +8,18 @@
     <groupId>org.deepinthink.ginga</groupId>
     <artifactId>ginga-socket-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-socket-parent/pom.xml</relativePath>
+    <relativePath>../ginga-socket-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga-socket</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-    <module>ginga-socket-autoconfigure</module>
-    <module>ginga-socket-core</module>
-    <module>ginga-socket-dependencies</module>
-    <module>ginga-socket-messaging</module>
-    <module>ginga-socket-parent</module>
-    <module>ginga-socket-starter</module>
-  </modules>
+  <artifactId>ginga-socket-autoconfigure</artifactId>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.deepinthink.ginga</groupId>
+      <artifactId>ginga-socket-messaging</artifactId>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
 </project>
