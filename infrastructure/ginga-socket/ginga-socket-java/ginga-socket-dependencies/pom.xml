@@ -12,4 +12,13 @@
   </parent>
   <artifactId>ginga-socket-dependencies</artifactId>
   <packaging>pom</packaging>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.deepinthink.ginga</groupId>
+        <artifactId>ginga-socket-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>

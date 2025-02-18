@@ -8,13 +8,10 @@
     <groupId>org.deepinthink.ginga</groupId>
     <artifactId>ginga-socket-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-socket-parent/pom.xml</relativePath>
+    <relativePath>../ginga-socket-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga-socket</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-    <module>ginga-socket-core</module>
-    <module>ginga-socket-dependencies</module>
-    <module>ginga-socket-parent</module>
-  </modules>
+  <artifactId>ginga-socket-core</artifactId>
+  <properties>
+    <spotless-maven-plugin.skip>false</spotless-maven-plugin.skip>
+  </properties>
 </project>
