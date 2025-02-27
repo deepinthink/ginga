@@ -28,7 +28,9 @@ public enum FrameType {
 
   REQUEST_FNF(0x05, Flags.CAN_HAVE_DATA | Flags.CAN_HAVE_METADATA),
 
-  METADATA_PUSH(0x0c, Flags.CAN_HAVE_METADATA);
+  ERROR(0x0B, Flags.CAN_HAVE_DATA),
+
+  METADATA_PUSH(0x0C, Flags.CAN_HAVE_METADATA);
 
   private final int encodedType;
   private final int flags;
