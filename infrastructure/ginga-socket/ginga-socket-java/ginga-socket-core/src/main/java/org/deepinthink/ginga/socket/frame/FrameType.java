@@ -20,7 +20,13 @@ import java.util.Arrays;
 public enum FrameType {
   RESERVED(0X00),
 
-  SETUP(0x01, Flags.CAN_HAVE_DATA | Flags.CAN_HAVE_METADATA);
+  SETUP(0x01, Flags.CAN_HAVE_DATA | Flags.CAN_HAVE_METADATA),
+
+  KEEPALIVE(0x03, Flags.CAN_HAVE_DATA),
+
+  REQUEST_RESPONSE(0x04, Flags.CAN_HAVE_DATA | Flags.CAN_HAVE_METADATA),
+
+  REQUEST_FNF(0x05, Flags.CAN_HAVE_DATA | Flags.CAN_HAVE_METADATA);
 
   private final int encodedType;
   private final int flags;

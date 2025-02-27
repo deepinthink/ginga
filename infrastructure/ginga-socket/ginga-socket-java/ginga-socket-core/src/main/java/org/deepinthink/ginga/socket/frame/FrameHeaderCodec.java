@@ -18,16 +18,23 @@ package org.deepinthink.ginga.socket.frame;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 
-public class FrameHeaderCodec {
+public final class FrameHeaderCodec {
 
   public static final int FLAGS_M = 0b01_0000_0000;
 
+  public static final String DISABLE_FRAME_TYPE_CHECK = "ginga.frames.disableFrameTypeCheck";
   private static final int FRAME_FLAGS_MASK = 0b0000_0011_1111_1111;
   private static final int FRAME_TYPE_BITS = 6;
   private static final int FRAME_TYPE_SHIFT = 16 - FRAME_TYPE_BITS;
   private static final int HEADER_SIZE = Integer.BYTES + Short.BYTES;
 
-  static ByteBuf encodedStreamZero(ByteBufAllocator allocator, FrameType frameType, int flags) {
+  private static boolean disableFrameTypeCheck;
+
+  static {
+    disableFrameTypeCheck = Boolean.getBoolean(DISABLE_FRAME_TYPE_CHECK);
+  }
+
+  static ByteBuf encodeStreamZero(ByteBufAllocator allocator, FrameType frameType, int flags) {
     return encode(allocator, 0, frameType, flags);
   }
 
@@ -55,5 +62,19 @@ public class FrameHeaderCodec {
     FrameType result = FrameType.fromEncodedType(typeAndFlags >> FRAME_TYPE_SHIFT);
     byteBuf.resetReaderIndex();
     return result;
+  }
+
+  public static void ensureFrameType(final FrameType frameType, ByteBuf byteBuf) {
+    if (!disableFrameTypeCheck) {
+      final FrameType typeInFrame = frameType(byteBuf);
+
+      if (typeInFrame != frameType) {
+        throw new AssertionError("expected " + frameType + ", but saw " + typeInFrame);
+      }
+    }
+  }
+
+  public static int size() {
+    return HEADER_SIZE;
   }
 }
