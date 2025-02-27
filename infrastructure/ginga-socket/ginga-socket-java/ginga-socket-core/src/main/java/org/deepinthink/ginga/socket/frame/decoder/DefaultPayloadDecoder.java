@@ -16,13 +16,11 @@
 package org.deepinthink.ginga.socket.frame.decoder;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import java.nio.ByteBuffer;
 import org.deepinthink.ginga.socket.Payload;
 import org.deepinthink.ginga.socket.core.DefaultPayload;
-import org.deepinthink.ginga.socket.frame.FireAndForgetFrameCodec;
-import org.deepinthink.ginga.socket.frame.FrameHeaderCodec;
-import org.deepinthink.ginga.socket.frame.FrameType;
-import org.deepinthink.ginga.socket.frame.RequestResponseFrameCodec;
+import org.deepinthink.ginga.socket.frame.*;
 
 class DefaultPayloadDecoder implements PayloadDecoder {
 
@@ -40,6 +38,10 @@ class DefaultPayloadDecoder implements PayloadDecoder {
       case REQUEST_RESPONSE -> {
         d = RequestResponseFrameCodec.data(byteBuf);
         m = RequestResponseFrameCodec.metadata(byteBuf);
+      }
+      case METADATA_PUSH -> {
+        d = Unpooled.EMPTY_BUFFER;
+        m = MetadataPushFrameCodec.metadata(byteBuf);
       }
       default -> throw new IllegalArgumentException("unsupported frame type: " + frameType);
     }

@@ -16,8 +16,11 @@
 package org.deepinthink.ginga.socket.core;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.deepinthink.ginga.socket.Payload;
 import org.deepinthink.ginga.socket.SetupPayload;
+import org.deepinthink.ginga.socket.frame.FrameHeaderCodec;
+import org.deepinthink.ginga.socket.frame.SetupFrameCodec;
 
 public final class DefaultSetupPayload extends SetupPayload {
 
@@ -29,17 +32,18 @@ public final class DefaultSetupPayload extends SetupPayload {
 
   @Override
   public boolean hasMetadata() {
-    return false;
+    return FrameHeaderCodec.hasMetadata(setupFrame);
   }
 
   @Override
   public ByteBuf sliceMetadata() {
-    return null;
+    ByteBuf metadata = SetupFrameCodec.metadata(setupFrame);
+    return metadata == null ? Unpooled.EMPTY_BUFFER : metadata;
   }
 
   @Override
   public ByteBuf sliceData() {
-    return null;
+    return SetupFrameCodec.data(setupFrame);
   }
 
   @Override
@@ -54,22 +58,22 @@ public final class DefaultSetupPayload extends SetupPayload {
 
   @Override
   public String metadataMimeType() {
-    return "";
+    return SetupFrameCodec.metadataMimeType(setupFrame);
   }
 
   @Override
   public String dataMimeType() {
-    return "";
+    return SetupFrameCodec.dataMimeType(setupFrame);
   }
 
   @Override
   public int keepAliveInterval() {
-    return 0;
+    return SetupFrameCodec.keepAliveInterval(setupFrame);
   }
 
   @Override
   public int getFlags() {
-    return 0;
+    return FrameHeaderCodec.flags(setupFrame);
   }
 
   @Override
