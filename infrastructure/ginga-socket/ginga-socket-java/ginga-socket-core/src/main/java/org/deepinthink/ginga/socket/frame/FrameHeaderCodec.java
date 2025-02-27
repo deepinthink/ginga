@@ -22,6 +22,10 @@ public final class FrameHeaderCodec {
 
   public static final int FLAGS_M = 0b01_0000_0000;
 
+  public static final int FLAGS_F = 0b00_1000_0000;
+  public static final int FLAGS_C = 0b00_0100_0000;
+  public static final int FLAGS_N = 0b00_0010_0000;
+
   public static final String DISABLE_FRAME_TYPE_CHECK = "ginga.frames.disableFrameTypeCheck";
   private static final int FRAME_FLAGS_MASK = 0b0000_0011_1111_1111;
   private static final int FRAME_TYPE_BITS = 6;
@@ -53,6 +57,10 @@ public final class FrameHeaderCodec {
     short typeAndFlags = byteBuf.readShort();
     byteBuf.resetReaderIndex();
     return typeAndFlags & FRAME_FLAGS_MASK;
+  }
+
+  public static boolean hasMetadata(ByteBuf byteBuf) {
+    return (flags(byteBuf) & FLAGS_M) == FLAGS_M;
   }
 
   public static FrameType frameType(ByteBuf byteBuf) {

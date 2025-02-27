@@ -15,7 +15,17 @@
  */
 package org.deepinthink.ginga.socket.frame;
 
+import io.netty.buffer.ByteBuf;
+
 public class RequestResponseFrameCodec {
 
   private RequestResponseFrameCodec() {}
+
+  public static ByteBuf data(ByteBuf byteBuf) {
+    return GenericFrameCodec.data(byteBuf);
+  }
+
+  public static ByteBuf metadata(ByteBuf byteBuf) {
+    return GenericFrameCodec.metadata(byteBuf);
+  }
 }

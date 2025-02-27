@@ -15,7 +15,28 @@
  */
 package org.deepinthink.ginga.socket.frame;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufAllocator;
+
 public class FireAndForgetFrameCodec {
 
   private FireAndForgetFrameCodec() {}
+
+  public static ByteBuf encode(
+      ByteBufAllocator allocator,
+      int streamId,
+      boolean fragmentFollows,
+      ByteBuf metadata,
+      ByteBuf data) {
+    return GenericFrameCodec.encode(
+        allocator, FrameType.REQUEST_FNF, streamId, fragmentFollows, metadata, data);
+  }
+
+  public static ByteBuf data(ByteBuf byteBuf) {
+    return GenericFrameCodec.data(byteBuf);
+  }
+
+  public static ByteBuf metadata(ByteBuf byteBuf) {
+    return GenericFrameCodec.metadata(byteBuf);
+  }
 }

@@ -19,4 +19,7 @@ import io.netty.buffer.ByteBuf;
 import java.util.function.Function;
 import org.deepinthink.ginga.socket.Payload;
 
-public interface PayloadDecoder extends Function<ByteBuf, Payload> {}
+public interface PayloadDecoder extends Function<ByteBuf, Payload> {
+  PayloadDecoder DEFAULT = new DefaultPayloadDecoder();
+  PayloadDecoder ZERO_COPY = new ZeroCopyPayloadDecoder();
+}
