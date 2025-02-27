@@ -14,4 +14,10 @@
   <properties>
     <spotless-maven-plugin.skip>false</spotless-maven-plugin.skip>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-buffer</artifactId>
+    </dependency>
+  </dependencies>
 </project>

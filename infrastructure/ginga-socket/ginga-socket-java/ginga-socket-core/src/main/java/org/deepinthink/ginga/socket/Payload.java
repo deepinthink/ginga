@@ -15,7 +15,48 @@
  */
 package org.deepinthink.ginga.socket;
 
-public interface Payload {
+import io.netty.buffer.ByteBuf;
+import io.netty.util.ReferenceCounted;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 
-  void release();
+public interface Payload extends ReferenceCounted {
+
+  boolean hasMetadata();
+
+  ByteBuf sliceMetadata();
+
+  ByteBuf sliceData();
+
+  ByteBuf data();
+
+  ByteBuf metadata();
+
+  @Override
+  Payload retain();
+
+  @Override
+  Payload retain(int increment);
+
+  @Override
+  Payload touch();
+
+  @Override
+  Payload touch(Object hint);
+
+  default ByteBuffer getMetadata() {
+    return sliceMetadata().nioBuffer();
+  }
+
+  default ByteBuffer getData() {
+    return sliceData().nioBuffer();
+  }
+
+  default String getMetadataUtf8() {
+    return sliceMetadata().toString(StandardCharsets.UTF_8);
+  }
+
+  default String getDataUtf8() {
+    return sliceData().toString(StandardCharsets.UTF_8);
+  }
 }

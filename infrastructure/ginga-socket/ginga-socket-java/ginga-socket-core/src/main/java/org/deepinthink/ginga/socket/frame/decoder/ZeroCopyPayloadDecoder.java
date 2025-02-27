@@ -13,32 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.deepinthink.ginga.socket;
+package org.deepinthink.ginga.socket.frame.decoder;
 
-import io.netty.util.AbstractReferenceCounted;
+import io.netty.buffer.ByteBuf;
+import org.deepinthink.ginga.socket.Payload;
+import org.deepinthink.ginga.socket.core.ByteBufPayload;
+import org.deepinthink.ginga.socket.frame.FrameHeaderCodec;
+import org.deepinthink.ginga.socket.frame.FrameType;
 
-public abstract class SetupPayload extends AbstractReferenceCounted implements Payload {
-
-  public abstract String metadataMimeType();
-
-  public abstract String dataMimeType();
-
-  public abstract int keepAliveInterval();
-
-  public abstract int getFlags();
+class ZeroCopyPayloadDecoder implements PayloadDecoder {
 
   @Override
-  public SetupPayload retain() {
-    super.retain();
-    return this;
+  public Payload apply(ByteBuf byteBuf) {
+    ByteBuf m = null;
+    ByteBuf d = null;
+
+    FrameType frameType = FrameHeaderCodec.frameType(byteBuf);
+
+    switch (frameType) {
+    }
+
+    return ByteBufPayload.create(d.retain(), m != null ? m.retain() : null);
   }
-
-  @Override
-  public SetupPayload retain(int increment) {
-    super.retain(increment);
-    return this;
-  }
-
-  @Override
-  public abstract SetupPayload touch();
 }
