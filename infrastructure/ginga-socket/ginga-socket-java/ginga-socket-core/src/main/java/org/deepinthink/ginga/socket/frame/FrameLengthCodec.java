@@ -19,8 +19,8 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 
 public class FrameLengthCodec {
-  private static final int FRAME_LENGTH_MASK = 0xFFFFFF;
-  private static final int FRAME_LENGTH_SIZE = 3;
+  public static final int FRAME_LENGTH_MASK = 0xFFFFFF;
+  public static final int FRAME_LENGTH_SIZE = 3;
 
   private FrameLengthCodec() {}
 
