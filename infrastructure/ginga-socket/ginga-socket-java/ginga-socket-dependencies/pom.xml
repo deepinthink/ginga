@@ -34,6 +34,11 @@
         <artifactId>ginga-socket-starter</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.deepinthink.ginga</groupId>
+        <artifactId>ginga-socket-transport-netty</artifactId>
+        <version>${project.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>

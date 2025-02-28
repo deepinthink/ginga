@@ -14,9 +14,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>ginga-socket-autoconfigure</module>
-    <module>ginga-socket-core</module>
     <module>ginga-socket-dependencies</module>
-    <module>ginga-socket-messaging</module>
     <module>ginga-socket-parent</module>
     <module>ginga-socket-starter</module>
   </modules>
