@@ -6,15 +6,17 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.deepinthink.ginga</groupId>
-    <artifactId>ginga-build</artifactId>
+    <artifactId>ginga-config-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-build/pom.xml</relativePath>
+    <relativePath>ginga-config-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga</artifactId>
+  <artifactId>ginga-config</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>ginga-build</module>
-    <module>ginga-config</module>
-    <module>ginga-socket</module>
+    <module>ginga-config-autoconfigure</module>
+    <module>ginga-config-dependencies</module>
+    <module>ginga-config-parent</module>
+    <module>ginga-config-server</module>
+    <module>ginga-config-starter-server</module>
   </modules>
 </project>
