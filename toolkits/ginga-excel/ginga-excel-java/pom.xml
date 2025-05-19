@@ -6,18 +6,14 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.deepinthink.ginga</groupId>
-    <artifactId>ginga-build</artifactId>
+    <artifactId>ginga-excel-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-build/pom.xml</relativePath>
+    <relativePath>ginga-excel-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga</artifactId>
+  <artifactId>ginga-excel</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>ginga-actor</module>
-    <module>ginga-boot</module>
-    <module>ginga-build</module>
-    <module>ginga-excel</module>
-    <module>ginga-faketime</module>
-    <module>ginga-socket</module>
+    <module>ginga-excel-dependencies</module>
+    <module>ginga-excel-parent</module>
   </modules>
 </project>
