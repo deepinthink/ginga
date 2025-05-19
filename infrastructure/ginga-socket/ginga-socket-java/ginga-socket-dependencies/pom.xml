@@ -8,13 +8,8 @@
     <groupId>org.deepinthink.ginga</groupId>
     <artifactId>ginga-build</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-build/pom.xml</relativePath>
+    <relativePath>../../../../buildtools/ginga-java/ginga-build/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga</artifactId>
+  <artifactId>ginga-socket-dependencies</artifactId>
   <packaging>pom</packaging>
-  <modules>
-    <module>ginga-boot</module>
-    <module>ginga-build</module>
-    <module>ginga-socket</module>
-  </modules>
 </project>
