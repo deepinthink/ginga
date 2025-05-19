@@ -6,14 +6,15 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.deepinthink.ginga</groupId>
-    <artifactId>ginga-build</artifactId>
+    <artifactId>ginga-boot-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-build/pom.xml</relativePath>
+    <relativePath>../ginga-boot-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-    <module>ginga-boot</module>
-    <module>ginga-build</module>
-  </modules>
+  <artifactId>ginga-boot-core</artifactId>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot</artifactId>
+    </dependency>
+  </dependencies>
 </project>
