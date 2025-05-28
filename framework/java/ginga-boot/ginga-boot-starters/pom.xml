@@ -8,15 +8,11 @@
     <groupId>org.deepinthink.ginga</groupId>
     <artifactId>ginga-boot-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>ginga-boot-parent/pom.xml</relativePath>
+    <relativePath>../ginga-boot-parent/pom.xml</relativePath>
   </parent>
-  <artifactId>ginga-boot</artifactId>
+  <artifactId>ginga-boot-starters</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>ginga-boot-autoconfigure</module>
-    <module>ginga-boot-core</module>
-    <module>ginga-boot-dependencies</module>
-    <module>ginga-boot-parent</module>
     <module>ginga-boot-starter</module>
   </modules>
 </project>
